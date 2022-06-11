@@ -17,6 +17,8 @@ Software Convergence Capstone design 2022-1
 
 * 얻어진 데이터 셋을 이용하여 image processing(Circular ROI extraction, Grid homogeneity analysis, Radial profiling, Particle segmentation, Check pattern detection) 과정을 거쳐 9가지 feature(mmg, msg, smg, ssg, std range, curve_c, gradient, particle sum, superposition ratio)을 얻는다. 9가지 feature을 MLP 및 linear SVM model을 이용하여 train시켜 classifier를 구현한다. 
 
+* System
+
 * Block diagram 
 ![image](https://user-images.githubusercontent.com/65657711/173181388-28d475db-4e68-4019-a4fa-2096bbf0be23.png)
 

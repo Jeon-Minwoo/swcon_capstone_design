@@ -14,15 +14,15 @@ Software Convergence Capstone design 2022-1
 
 * Evaporating flask에 담긴 용액(100ml)의 용해도를 컴퓨터 비전을 이용하여 측정한다. 실제 반도체 제작공정에서 쓰일 용질(CuOAc, PdOaC, CuSO, CuBr)과 증류수(100ml)으로 구성된 용액을 준비하고, 다양한 background image(Grid bg, white bg) 환경에서 데이터 셋을 구현한다. 
 
+* 얻어진 데이터 셋을 이용하여 image processing(Circular ROI extraction, Grid homogeneity analysis, Radial profiling, Particle segmentation, Check pattern detection) 과정을 거쳐 9가지 feature(mmg, msg, smg, ssg, std range, curve_c, gradient, particle sum, superposition ratio)을 얻는다. 9가지 feature을 MLP 및 linear SVM model을 이용하여 train시켜 classifier를 구현한다.   
 
-* 얻어진 데이터 셋을 이용하여 image processing(Circular ROI extraction, Grid homogeneity analysis, Radial profiling, Particle segmentation, Check pattern detection) 과정을 거쳐 9가지 feature(mmg, msg, smg, ssg, std range, curve_c, gradient, particle sum, superposition ratio)을 얻는다. 9가지 feature을 MLP 및 linear SVM model을 이용하여 train시켜 classifier를 구현한다. 
-
-* System
-
-* Block diagram 
+* System outline   
+<img width="633" alt="image" src="https://user-images.githubusercontent.com/65657711/173188232-dfd7b6df-3924-4033-94db-51aff5ce14a4.png">
+ 
+* Block diagram    
 ![image](https://user-images.githubusercontent.com/65657711/173181388-28d475db-4e68-4019-a4fa-2096bbf0be23.png)
 
-* Analysis algorithm
+* Analysis algorithm   
 ![image](https://user-images.githubusercontent.com/65657711/173181403-7a90ad65-271e-4e3c-af44-502700d08da6.png)
 ![image](https://user-images.githubusercontent.com/65657711/173181404-8ee4e27f-71d2-41fa-9d81-f4b03aad27fd.png)
 

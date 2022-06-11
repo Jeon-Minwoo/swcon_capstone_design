@@ -1,0 +1,16 @@
+Name: POA-002
+aug_idx: '00'
+check_detection:
+  supp_ratio: 74.36451448906965
+Grid_homogeneity:
+  mmg: 164.41039772727274
+  msg: 26.402044011624092
+  smg: 28.279760868462958
+  ssg: 8.267754203689698
+Profile:
+  area: 24465.72945018559
+  curve_c: 192.28743635866104
+  gradient: 0.2771
+Segmentation:
+  particle_sum: 26635
+target: f2

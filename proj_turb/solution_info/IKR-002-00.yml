@@ -1,0 +1,16 @@
+Name: IKR-002
+aug_idx: '00'
+check_detection:
+  supp_ratio: 3.555921545141488
+Grid_homogeneity:
+  mmg: 68.30543918918919
+  msg: 45.75861556079451
+  smg: 3.968231951358411
+  ssg: 12.19863194814096
+Profile:
+  area: 3281.59054691198
+  curve_c: 71.04540687081332
+  gradient: 0.073
+Segmentation:
+  particle_sum: 1
+target: p0

@@ -1,0 +1,16 @@
+Name: COA-004
+aug_idx: '02'
+check_detection:
+  supp_ratio: 76.90217391304348
+Grid_homogeneity:
+  mmg: 113.10276295731705
+  msg: 36.90160782210204
+  smg: 9.652408201999965
+  ssg: 8.762238441013489
+Profile:
+  area: 7788.740218904308
+  curve_c: 132.9009359180961
+  gradient: 0.1415
+Segmentation:
+  particle_sum: 18416
+target: f2

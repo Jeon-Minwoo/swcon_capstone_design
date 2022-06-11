@@ -1,0 +1,16 @@
+Name: CSO-001
+aug_idx: '02'
+check_detection:
+  supp_ratio: 93.47687738650828
+Grid_homogeneity:
+  mmg: 179.6945859375
+  msg: 19.610101436581726
+  smg: 7.983670009585846
+  ssg: 4.717637373510393
+Profile:
+  area: 5314.673408439854
+  curve_c: 200.81525049926242
+  gradient: 0.1958
+Segmentation:
+  particle_sum: 711
+target: p0

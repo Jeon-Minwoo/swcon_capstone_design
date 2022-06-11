@@ -1,0 +1,16 @@
+Name: POA-004
+aug_idx: '01'
+check_detection:
+  supp_ratio: 28.41409691629956
+Grid_homogeneity:
+  mmg: 114.66854039634147
+  msg: 40.31269700431049
+  smg: 26.79060659721365
+  ssg: 8.581155603425684
+Profile:
+  area: 7788.924656231287
+  curve_c: 180.81151239353704
+  gradient: 0.3754
+Segmentation:
+  particle_sum: 38152
+target: f1

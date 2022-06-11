@@ -1,0 +1,16 @@
+Name: COA-003
+aug_idx: '00'
+check_detection:
+  supp_ratio: 82.8125
+Grid_homogeneity:
+  mmg: 120.55330792682928
+  msg: 34.05349241991976
+  smg: 7.971865465974765
+  ssg: 8.24273096810661
+Profile:
+  area: 3256.154170674463
+  curve_c: 138.10423554217058
+  gradient: 0.1258
+Segmentation:
+  particle_sum: 344
+target: f2

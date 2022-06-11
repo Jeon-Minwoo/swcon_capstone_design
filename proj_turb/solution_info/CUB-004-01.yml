@@ -1,0 +1,16 @@
+Name: CUB-004
+aug_idx: '01'
+check_detection:
+  supp_ratio: 33.31123632747763
+Grid_homogeneity:
+  mmg: 131.98907703488373
+  msg: 34.238169659106305
+  smg: 22.277168466343113
+  ssg: 9.886838233316288
+Profile:
+  area: 27414.094328566345
+  curve_c: 156.28556754779996
+  gradient: 0.1945
+Segmentation:
+  particle_sum: 45934
+target: f2

@@ -1,0 +1,16 @@
+Name: CUB-003
+aug_idx: '03'
+check_detection:
+  supp_ratio: 39.595660749506905
+Grid_homogeneity:
+  mmg: 156.4634593023256
+  msg: 33.23207593948102
+  smg: 31.91618287751956
+  ssg: 10.720909060970108
+Profile:
+  area: 21258.080400155886
+  curve_c: 212.6121375194399
+  gradient: 0.3435
+Segmentation:
+  particle_sum: 79007
+target: f2

@@ -1,0 +1,41 @@
+@startuml ConnectionManager
+
+participant Host
+participant ConnectionManager as Conn
+participant Activity as Act
+
+Act -> Conn: Register listener
+
+group Host to Client
+
+    group Request
+        Host --> Conn: Req(req_id, req, args)
+        Conn -> Act: Perform listener.request()
+    end
+
+    group Response
+        Act -> Conn: Resp(req_id, resp), args
+        activate Conn
+        Conn --> Host: Resp(req_id, resp)
+        Conn --> Host: args if needed
+        deactivate Conn
+    end
+
+end
+
+group Client to Host
+
+    group Request
+        Act -> Act: Lock request
+        Act -> Conn: Req(-1, req, args)
+        Conn --> Host: Forward
+    end
+
+    group Response
+        Host --> Conn: Resp(resp, args)
+        Conn -> Act: Perform listener.response()
+    end
+
+end
+
+@enduml

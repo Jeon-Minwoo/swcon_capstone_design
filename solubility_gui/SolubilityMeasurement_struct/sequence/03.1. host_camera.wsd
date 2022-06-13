@@ -1,0 +1,30 @@
+@startuml Host-Camera Interaction
+
+' Entity declaration
+participant Host
+participant Camera
+
+group Take Picture
+
+    Host -> Camera: Req(TakePicture, cam_id)
+    alt OK
+        Camera -> Host: Resp(OK)
+        Camera -> Host: Picture
+    else Error
+        Camera -> Host: Resp(Error)
+    end
+
+end
+
+group Toggle Torch
+
+    Host -> Camera: Req(ToggleTorch)
+    alt OK
+        Camera -> Host: Resp(OK)
+    else Error
+        Camera -> Host: Resp(Error)
+    end
+
+end
+
+@enduml

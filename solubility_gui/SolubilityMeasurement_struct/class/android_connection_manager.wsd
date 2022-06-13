@@ -1,0 +1,34 @@
+@startuml Android Connection Manager
+
+interface IInteractionHandler {
+
+    EResponse handleRequest(int requestId, ERequest request, byte[] args)
+    void handleResponse(EResponse response, byte[] args)
+}
+
+enum ERequest { }
+enum EResponse { }
+
+class ConnectionManager {
+
+    - {static} ConnectionManager instance
+
+    - Socket socket
+    - IInteractionHandler handler;
+    
+    + {static} ConnectionManager getInstance()
+
+    + boolean isHostReachable(int timeout)
+    + IInteractionHandler getInteractionHandler()
+    + void setInteractionHandler(IInteractionHandler handler)
+    + boolean connect(ERequest role)
+    + boolean isConnected()
+    + boolean disconnect()
+
+    + boolean request(ERequest request, byte[] args)
+}
+ConnectionManager *- IInteractionHandler: has one
+ConnectionManager <|-- ERequest
+ConnectionManager <|-- EResponse
+
+@enduml

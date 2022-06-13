@@ -1,0 +1,59 @@
+@startuml Bundle, EResponse, ERequest, ByteEnum
+
+enum ByteEnum {
+
+    + byte[] toBytes()
+    + T fromBytes<T>(byte value) where T : ByteEnum
+}
+
+enum ERequest {
+
+    NONE = 0
+
+    CAMERA = 0x01
+    DISPLAY = 0x02
+    ANY = 0x03
+
+    CAMERA_TAKE_PICTURE = CAMERA | 0x10
+    CAMERA_TOGGLE_TORCH = CAMERA | 0x20
+
+    DISPLAY_TAKE_PICTURE = DISPLAY | 0x10
+    DISPLAY_SHOW_PICTURE = DISPLAY | 0x20
+
+    ANY_QUIT = ANY | 0x10
+
+    + ERequest fromBytes<ERequest>(byte value)
+    + boolean isForCamera()
+    + boolean isForDisplay()
+}
+ERequest <|-- ByteEnum 
+
+enum EResponse {
+
+    NONE = 0
+    OK = 1
+    ACK = 2
+    REJECT = 3
+    ERROR = 4
+
+    + EResponse fromBytes<EResponse>(byte value)
+}
+EResponse <|-- ByteEnum 
+
+class Bundle {
+
+    + byte request_id
+    + byte request
+    + byte response
+    + byte[] arguments
+
+    + Bundle(ERequest req, EResponse resp, byte[] args)
+    + Bundle(byte[] data)
+
+    + byte[] toBytes()
+    + boolean isFromClient() -> request_id==-1
+}
+Bundle *- ERequest : has
+Bundle *- EResponse : has
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml Host Side Interaction
+
+' Entity declaration
+participant MainWindow as Win
+participant Interactor as Inter
+participant Client
+
+group MainWindow to Client
+
+    group Request
+        Win -> Win: IncreaseReqId
+        Win -> Inter: Req(req_id, req, args)
+        Inter --> Client: Forward
+    end
+
+    group Response
+        Client --> Inter: Resp(req_id, resp)
+        Client --> Inter: args if needed
+
+        Inter -> Win: signal(bundle)
+    end
+
+end
+
+group Client to MainWindow
+
+    group Request
+        Client -> Client: Lock request
+        Client --> Inter: Req(-1, req, args)
+    end
+
+    group Response    
+        Inter --> Client: Resp(resp, args)
+        Client -> Client: Unlock request
+        Inter -> Win: signal(bundle)
+        Win -> Win: digest_response(bundle)
+    end
+
+end
+
+@enduml

@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_window</class>
+ <widget class="QMainWindow" name="main_window">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>965</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>965</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>965</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Solubility Measurement</string>
+  </property>
+  <widget class="QWidget" name="central_widget">
+   <widget class="QGraphicsView" name="front_camera_view">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>384</width>
+      <height>250</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="display_camera_view">
+    <property name="geometry">
+     <rect>
+      <x>406</x>
+      <y>10</y>
+      <width>384</width>
+      <height>250</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="front_camera_label">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>275</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Front Camera</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rear_camera_label">
+    <property name="geometry">
+     <rect>
+      <x>96</x>
+      <y>885</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Rear Camera</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="rear_camera_view">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>300</y>
+      <width>768</width>
+      <height>576</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="front_camera_capture_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>270</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Capture</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="rear_camera_capture_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>880</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Capture</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="display_camera_capture_button">
+    <property name="geometry">
+     <rect>
+      <x>406</x>
+      <y>270</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Capture</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="display_camera_label">
+    <property name="geometry">
+     <rect>
+      <x>486</x>
+      <y>275</y>
+      <width>231</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Display Camera</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="client_state_group_box">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>880</y>
+      <width>161</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Clients</string>
+    </property>
+    <widget class="QLabel" name="camera_state_label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Camera</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="display_state_view" native="true">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="camera_state_view" native="true">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="display_state_label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Display</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="image_path_label">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>915</y>
+      <width>511</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>(Double click here to browse an image.)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="send_image_to_display_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>910</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Display</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="calibration_ck_box">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>915</y>
+      <width>150</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calibration Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bg_display_button">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>940</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>BG Display</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="save_path_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>940</y>
+      <width>231</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>(Double click here to set up path.)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="save_filename_lineedit">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>940</y>
+      <width>271</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>(Save file name)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="torch_toggle_button">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>880</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Torch</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="Feature_groupbox">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>600</y>
+      <width>201</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Feature/Output</string>
+    </property>
+    <widget class="QLabel" name="supp_ratio_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>supp_ratio</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="mmg_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>mmg</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="msg_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>64</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>msg</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="smg_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>95</y>
+       <width>64</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>smg</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ssg_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>64</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ssg</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="curve_a_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>145</y>
+       <width>64</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>curve_a</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="curve_b_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>64</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>curve_b</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="curve_c_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>195</y>
+       <width>64</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>curve_c</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="std_range_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>64</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>std_range</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="gradient_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>245</y>
+       <width>64</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>gradient</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="output_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>340</y>
+       <width>64</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>output</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="supp_ratio_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>20</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="mmg_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>45</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="msg_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>70</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="smg_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>95</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ssg_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>120</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="curve_a_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>145</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="curve_b_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>170</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="curve_c_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>195</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="std_range_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>220</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="gradient_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>245</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="output_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>340</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="particle_sum_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>particle_sum</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="particle_sum_output_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>270</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="processing_button">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>570</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Processing</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="bg_select_combobox">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>540</y>
+      <width>101</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>White</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Check_pattern</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="save_button">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>910</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="classify_button">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>570</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>classify</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

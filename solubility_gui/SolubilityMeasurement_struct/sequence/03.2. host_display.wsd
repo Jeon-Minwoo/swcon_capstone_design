@@ -1,0 +1,31 @@
+@startuml Host-Display Interaction
+
+' Entity declaration
+participant Host
+participant Display
+
+group Display Image
+
+    Host -> Display: DisplayImage(img)
+    alt OK
+
+        Display -> Host: OK
+    else Error
+        Display -> Host: Error
+    end
+
+end
+
+group Take Picture
+
+    Host -> Display: TakePicture(cam_id)
+    alt OK
+        Display -> Host: OK
+        Display -> Host: Picture
+    else Error
+        Display -> Host: Error
+    end
+
+end
+
+@enduml

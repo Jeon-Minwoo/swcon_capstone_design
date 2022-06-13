@@ -1,0 +1,38 @@
+@startuml Establishing, Terminating Connection
+
+' Entity declaration
+participant Host
+participant Client
+
+group Proposal
+
+    Client -> Host: Req(Camera | Display)
+    alt Occupied
+        Host -> Client: Resp(Reject)
+    else Unknown
+        Host -> Client: Resp(Error)
+    else
+        ' Proposed role not occupied
+        Host -> Client: Resp(OK)
+        Host -> Host: Create Interactor Instance
+    end
+
+end
+
+group Quit
+
+    group Client-led
+        Client -> Host: Req(Quit)
+        Host -> Client: Resp(Ack) to the Client
+        Host -> Client: Req(Quit) to another Client if exists
+
+    end
+
+    group Host-led
+        Host -> Client: Req(Quit) for Client
+        Client -> Host: Resp(Ack)
+    end
+
+end
+
+@enduml
